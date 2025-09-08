@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Unlock /etc/hosts if locked
+sudo chattr -i /etc/hosts
+
 # Get the full path of the current script
 SCRIPT_PATH="$(realpath "$0")"
 # Define the log file path dynamically based on the script's location and name
@@ -40,3 +43,5 @@ fi
 
 # Lock /etc/hosts
 sudo cp -a /etc/hosts /etc/hosts.backup.$(date +%F)
+# To Unlock
+#sudo chattr -i /etc/hosts
