@@ -37,3 +37,6 @@ if ! crontab -l | grep -Fq -- "$SCRIPT_PATH"; then
 else
     echo "[$(date)] Cron job already exists. No further actions taken."
 fi
+
+# Lock /etc/hosts
+sudo cp -a /etc/hosts /etc/hosts.backup.$(date +%F)
