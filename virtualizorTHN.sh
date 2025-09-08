@@ -43,5 +43,6 @@ fi
 
 # Lock /etc/hosts
 sudo cp -a /etc/hosts /etc/hosts.backup.$(date +%F)
+sudo chattr +i /etc/hosts
 # To Unlock
 #sudo chattr -i /etc/hosts
